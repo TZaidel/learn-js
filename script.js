@@ -2819,3 +2819,290 @@ let link = 'https://somesite.com/about';
 // console.log("Students grouped by age:", groupedByAge);
 
 //*
+// function findMult(min, max) {
+//   let res =[]
+//   for (let i = min; i <= max; i += min)
+// {    res.push(i)}
+// console.log(res)
+// }
+// findMult(2, 15)
+
+//*
+// const res = x => typeof x === 'string' ? 'Error' : x * 50 + 6
+// console.log(res(10))
+
+//*
+// const xor = (a, b) => a === b ? false : true
+//*2
+// const xor = (a,b)=> a!=b
+// console.log(xor(true, true))
+
+//*
+// function sumStr(a,b) {
+  // return String((parseInt(a)|| 0) + (parseInt(b)||0))
+  //*2
+//   return String(Number(a)+Number(b))
+// }
+
+// console.log(sumStr('3', ''))
+// console.log(sumStr('', ''))
+// console.log(sumStr('3', '5'))
+
+///*
+// var countSheep = function (num) {
+//   let str = ''
+//   for (let i = 1; i <= num; i++){
+// str +=`${i} sheep... `
+//   }
+//   return str
+// }
+
+// console.log(countSheep(5))
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!----------------------THIS
+//*1
+// function foo(num) {
+// 	console.log( "foo: " + num );
+// 	// следим, сколько раз вызывается функция
+// 	foo.k++;
+// }
+// foo.k = 0;
+
+// var i;
+
+// for (i=0; i<10; i++) {
+// 	if (i > 5) {
+// 		foo( i );
+// 	}
+// }
+// // foo: 6// // foo: 7// // foo: 8// // foo: 9
+// console.log( foo.k ); // 4// сколько раз `foo` была вызвана?
+
+//*2
+// function foo(num) {
+// 	console.log( "foo: " + num );
+// 	// следим, сколько раз вызывается функция
+// 	this.k++;
+// }
+// foo.k = 0;
+
+// var i;
+
+// for (i=0; i<10; i++) {
+// 	if (i > 5) {
+// 		foo.call(foo, i );
+// 	}
+// }
+// // foo: 6// foo: 7// foo: 8// foo: 9
+// console.log( foo.k ); // 4// сколько раз `foo` была вызвана?
+
+//*
+// function baz() {
+//     // стек вызовов: `baz`
+//     // поэтому наша точка вызова — глобальная область видимости
+
+//     console.log( "baz" );
+//     bar(); // <-- точка вызова для `bar`
+// }
+
+// function bar() {
+//     // стек вызовов: `baz` -> `bar`
+//     // поэтому наша точка вызова в `baz`
+
+//     console.log( "bar" );
+//     foo(); // <-- точка вызова для `foo`
+// }
+
+// function foo() {
+//   debugger
+//     // стек вызовов: `baz` -> `bar` -> `foo`
+//     // поэтому наша точка вызова в `bar`
+
+//     console.log( "foo" );
+// }
+// baz(); // <-- точка вызова для `baz`
+
+//*
+// function foo() {
+// 	console.log( this.a );
+// }
+
+// var obj = {
+// 	a: 2,
+// 	foo: foo
+// };
+
+// var bar = obj.foo; // ссылка/алиас на функцию!
+
+// var a = "ой, глобальная"; // `a` также и свойство глобального объекта
+
+// bar(); // "ой, глобальная"
+// console.log(obj.a)
+
+//*
+// function foo() {
+//   debugger
+// 	console.log( this.a );
+// }
+
+// function doFoo(fn) {
+  
+// 	// `fn` — просто еще одна ссылка на `foo`
+
+// 	fn(); // <-- точка вызова!
+// }
+
+// var obj = {
+// 	a: 2,
+// 	foo: foo
+// };
+
+// var a = "ой, глобальная"; // `a` еще и переменная в глобальном объекте
+
+// doFoo(obj.foo); // "ой, глобальная"
+
+
+//*
+// function foo(something) {
+// 	console.log( this.a, something );
+// 	return this.a + something;
+// }
+
+// var obj = {
+// 	a: 2
+// };
+
+// var bar = function() {
+// 	return foo.apply( obj, arguments );
+// };
+
+// var b = bar( 3 ); // 2 3
+// console.log( b ); // 5
+
+
+
+//!!!!!!!!!!---------------DOM
+/*elem.parentNode - вибере батьківський elem.
+elem.childNodes - псевдомасив, зберігає всі дочірні елементи, включно з текстовими.
+elem.children - псевдомасив, зберігає тільки дочірні вузли-елементи, тобто ті, що відповідають тегам.
+elem.firstChild - вибере перший дочірній елемент всередині elem, включно з текстовими вузлами.
+elem.firstElementChild - вибере перший дочірній вузол-елемент всередині elem.
+elem.lastChild - вибере останній дочірній елемент всередині elem, включно з текстовими вузлами.
+elem.lastElementChild - вибере останній дочірній вузол-елемент всередині elem.
+elem.previousSibling - вибере елемент «зліва» від elem (його попереднього сусіда).
+elem.previousElementSibling - вибере вузол-елемент «зліва» від elem (його попереднього сусіда).
+elem.nextSibling - вибере елемент «праворуч» від elem (його наступного сусіда)
+elem.nextElementSibling - вибере вузол-елемент «праворуч» від elem (його наступного сусіда).*/
+
+// console.log(document);
+// console.log(document.body);
+// const list = document.querySelector('.list')
+// console.log(list);
+// const listFirstElItem = list.firstElementChild
+// console.log(listFirstElItem)
+// const listLastElItem = list.lastElementChild
+// console.log(listLastElItem)
+// const listItems = list.children
+// console.log(listItems);
+
+
+//*
+
+// const listWithId = document.querySelector('#menu');
+// listWithId.style.textTransform = 'uppercase';
+// listWithId.style.fontSize = '30px'
+
+// console.log(listWithId);
+
+// const listWithClass = document.querySelector('.menu')
+// console.log(listWithClass)
+
+// const menuItemsByTagName = document.querySelectorAll('li')
+// console.log(menuItemsByTagName)
+
+// const menuItemsByClass = document.querySelectorAll('.menu-item')
+// console.log(menuItemsByClass)
+
+// const firstMenuItem = document.querySelector('.menu-item')
+// console.log(firstMenuItem)
+// firstMenuItem.style.color = 'red'
+
+// const image = document.querySelector('.image')
+// console.table(image.src)
+// image.src = "https://picsum.photos/id/13/640/480"
+// image.alt = 'River'
+
+
+// const textEl = document.querySelector('.article-text')
+// console.log(textEl)
+// console.log(textEl.textContent)
+// textEl.style.color = "red"
+
+// const titleEl = document.querySelector('.article-title')
+// titleEl.textContent = 'Hey you'
+
+/* <a class="link is-active" href="">A random link</a> */
+// const linki = document.querySelector('.link')
+// console.log(linki.classList)
+
+// const hasActiveClass = linki.classList.contains('is-active')
+// console.log(hasActiveClass)
+
+// linki.classList.add('special')
+// console.log(linki.classList)
+
+// linki.classList.remove('is-active')
+// console.log(linki.classList)
+
+// linki.classList.replace('special', 'top')
+// console.log(linki.classList)
+//*
+// const button = document.querySelector('.btn')
+// console.log(button)
+// button.style.backgroundColor = 'red'
+// button.style.padding ='20px'
+// console.log(button.style)
+//*
+//<img class="image" src="https://picsum.photos/id/15/320/240" alt="Rocks and waterfall" width="300" />
+
+// const image = document.querySelector('.image')
+// console.log(image.attributes)
+// console.log(image.hasAttribute('alt'))
+// console.log(image.getAttribute('alt'))
+// console.log(image.getAttribute('src'))
+// image.setAttribute('alt', 'amazing')
+// console.log(image.getAttribute('alt'))
+
+//*
+// const saveBtn = document.querySelector('.editor button[data-action = "save"]')
+// console.log(saveBtn.dataset.action)
+
+// const closeBtn = document.querySelector('.editor button[data-action = "close"')
+// console.log(closeBtn.dataset.action)
+//*
+// const headTitle = document.createElement('h1')
+// headTitle.textContent = 'hello World'
+// console.log(headTitle)
+//*
+/*<div class="container">
+  <ul class="usernames">
+    <li>Mango</li>
+  </ul>
+</div>*/
+const list = document.querySelector('.usernames')
+const lastItem = document.createElement('li')
+lastItem.textContent = 'Kate'
+list.append(lastItem)
+
+const firstItem = document.createElement('li')
+firstItem.textContent = 'Boris'
+list.prepend(firstItem)
+
+const title = document.createElement('h1')
+title.textContent = 'Usernames'
+list.before(title)
+title.style.color = 'red'
+title.style.textAlign = 'center'
+
+const p = document.createElement('p')
+p.textContent = 'Lore hbacdkj bkjxlb bjdkj lmcbv'
+list.after(p)
