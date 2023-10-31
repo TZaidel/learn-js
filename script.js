@@ -3083,26 +3083,45 @@ elem.nextElementSibling - вибере вузол-елемент «правор�
 // headTitle.textContent = 'hello World'
 // console.log(headTitle)
 //*
-/*<div class="container">
-  <ul class="usernames">
-    <li>Mango</li>
-  </ul>
-</div>*/
-const list = document.querySelector('.usernames')
-const lastItem = document.createElement('li')
-lastItem.textContent = 'Kate'
-list.append(lastItem)
+// const list = document.querySelector('.usernames')
+// const lastItem = document.createElement('li')
+// lastItem.textContent = 'Kate'
+// list.append(lastItem)
 
-const firstItem = document.createElement('li')
-firstItem.textContent = 'Boris'
-list.prepend(firstItem)
+// const firstItem = document.createElement('li')
+// firstItem.textContent = 'Boris'
+// list.prepend(firstItem)
 
-const title = document.createElement('h1')
-title.textContent = 'Usernames'
-list.before(title)
-title.style.color = 'red'
-title.style.textAlign = 'center'
+// const title = document.createElement('h1')
+// title.textContent = 'Usernames'
+// list.before(title)
+// title.style.color = 'red'
+// title.style.textAlign = 'center'
 
-const p = document.createElement('p')
-p.textContent = 'Lore hbacdkj bkjxlb bjdkj lmcbv'
-list.after(p)
+// const p = document.createElement('p')
+// p.textContent = 'Lore hbacdkj bkjxlb bjdkj lmcbv'
+// list.after(p)
+
+// const ul = document.createElement('ul')
+// ul.textContent = 'Names'
+// ul.style.fontSize ='30px'
+// list.before(ul)
+// ul.remove()
+//*
+// const article = document.querySelector('.article')
+// console.log(article.innerHTML)
+
+// const title = document.querySelector('.article .title')
+// title.innerHTML = 'changes'
+// console.log(title.innerHTML)
+//*
+// const list = document.querySelector('.list')
+// console.log(list)
+// const techno = ['html', 'css', 'js']
+// const tech = techno.map(tech => `<li class=list-item>${tech}</li>`).join('')
+// console.log(tech)
+// list.insertAdjacentHTML('beforeend', tech)
+// list.insertAdjacentHTML('beforebegin', 'TEXT')
+//*
+const singleBtn = document.querySelector('#single')
+const handleClick
