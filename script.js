@@ -3122,6 +3122,255 @@ elem.nextElementSibling - вибере вузол-елемент «правор�
 // console.log(tech)
 // list.insertAdjacentHTML('beforeend', tech)
 // list.insertAdjacentHTML('beforebegin', 'TEXT')
+
+//!---------------DOM
+/*elem.parentNode - вибере батьківський elem.
+elem.childNodes - псевдомасив, зберігає всі дочірні елементи, включно з текстовими.
+elem.children - псевдомасив, зберігає тільки дочірні вузли-елементи, тобто ті, що відповідають тегам.
+elem.firstChild - вибере перший дочірній елемент всередині elem, включно з текстовими вузлами.
+elem.firstElementChild - вибере перший дочірній вузол-елемент всередині elem.
+elem.lastChild - вибере останній дочірній елемент всередині elem, включно з текстовими вузлами.
+elem.lastElementChild - вибере останній дочірній вузол-елемент всередині elem.
+elem.previousSibling - вибере елемент «зліва» від elem (його попереднього сусіда).
+elem.previousElementSibling - вибере вузол-елемент «зліва» від elem (його попереднього сусіда).
+elem.nextSibling - вибере елемент «праворуч» від elem (його наступного сусіда)
+elem.nextElementSibling - вибере вузол-елемент «праворуч» від elem (його наступного сусіда).*/
+
+//!------------Пошук елементів
+/*element.querySelector(selector);
+element.querySelectorAll(selector);*/
+
+//!-----------CLASS LIST
+/*elem.classList.contains(cls) - повертає true або false, залежно від наявності класу cls в елемента.
+elem.classList.add(cls) - додає клас cls до списку класів елемента.
+elem.classList.remove(cls) - видаляє клас cls зі списку класів елемента.
+elem.classList.toggle(cls) - якщо відсутній клас cls, то додає його, якщо - присутній, навпаки - видаляє.
+elem.classList.replace(oldClass, newClass) - замінює існуючий клас oldClass на вказаний newClass.*/
+
+//!-----------Атрибути
+/*elem.hasAttribute(name) - перевіряє наявність атрибута, повертає true або false.
+elem.getAttribute(name) - отримує значення атрибута і повертає його.
+elem.setAttribute(name, value) - встановлює атрибут.
+elem.removeAttribute(name) - видаляє атрибут.
+elem.attributes - властивість, що повертає об'єкт усіх атрибутів елемента.*/
+
+//!------------data-атрибути
+/*<button type="button" data-action="save">Save</button>
+<button type="button" data-action="close">Close</button>
+const saveBtn = document.querySelector('.editor button[data-action="save"]');
+const closeBtn = document.querySelector('.editor button[data-action="close"]');
+
+console.log(saveBtn.dataset.action); //save
+console.log(closeBtn.dataset.action); //close*/
+
+//!------------Створення
+//document.createElement(tagName);
+
+//!------------Додавання
+/*element.append(el1, el2, ...) - додає ел. після всіх дітей element.
+element.prepend(el1, el2, ...) - додає ел. перед усіма дітьми element.
+element.after(el1, el2, ...) - додає один або декілька елементів після елемента element.
+element.before(el1, el2, ...) - додає один або декілька елементів перед елементом element.*/
+
+//!----------insertAdjacentHTML()
+//elem.insertAdjacentHTML(position, string);
+/*"beforebegin" - перед elem
+"afterbegin" - всередині elem, перед усіма дітьми
+"beforeend" - всередині elem, після усіх дітей
+"afterend" - після elem*/
+
+//!-----------Видалення
+//elem.remove();
+
+//!-------------innerHTML
+//*Читання
+/*Властивість innerHTML зберігає вміст елемента, включно з тегами, у вигляді рядка. Значення, що повертається, - це завжди валідний HTML-код.
+const article = document.querySelector(".article");
+console.log(article.innerHTML);*/
+//*Зміна
+/*Властивість innerHTML доступна і для читання, і для запису. Якщо записати в неї рядок з HTML-тегами, то браузер під час парсингу рядка перетворить їх у валідні елементи і додасть в DOM-дерево.
+const title = document.querySelector(".article .title");
+title.innerHTML = 'New and <span class="accent">improved</span> title';*/
+//*Якщо у властивість innerHTML записати порожній рядок, то вміст елемента буде очищено. Це простий і швидкий спосіб видалення всього вмісту.
+//*Використовуйте властивість elem.innerHTML для додавання тільки тоді, коли елемент elem - порожній, або якщо потрібно повністю замінити його вміст.
+
+//!----------addEventListener()
+//element.addEventListener(event, handler, options);
+/*event - ім'я події, рядок, наприклад "click".
+handler - колбек-функція, яка буде викликана під час настання події.
+options - необов'язковий об'єкт параметрів з розширеними налаштуваннями.*/
+
+//!-----------removeEventListener()
+//element.removeEventListener(event, handler, options)
+
+
 //*
-const singleBtn = document.querySelector('#single')
-const handleClick
+// const technologies = ['HTML', 'CSS', 'JavaScript', 'React', 'Node']
+//*1
+// const ul = document.createElement('ul')
+// console.log(ul)
+
+// for (const technology of technologies) {
+//   console.log(technology)
+//   const li = document.createElement('li')
+//   li.textContent = technology
+//   ul.appendChild(li)
+// }
+// document.body.prepend(ul)
+//*2
+// const elements = technologies.map(el => `<li>${el}</li>`).join('')
+// const list = `<ul>${elements}</ul>`
+// console.log(list)
+// document.body.insertAdjacentHTML('afterbegin', list)
+//*3
+// technologies.forEach(technology => {
+//   console.log(technology)
+//   const li = document.createElement('li')
+//   li.textContent = technology
+//   ul.appendChild(li)
+//   document.body.prepend(ul)
+// })
+//*4
+// const items = technologies.reduce((acc, el) => 
+//   acc + `<li>${el}</li>`, '')
+//   const list = `<ul>${items}</ul>`
+//   console.log(list)
+//   document.body.insertAdjacentHTML('afterbegin', list)
+
+//*
+// const singleBtn = document.querySelector('#single')
+// const handleClick = () => console.log('click event listener callback')
+// singleBtn.addEventListener('click', handleClick)
+// const multiBtn = document.querySelector('#multiple')
+// const firstCallback = () => console.log('First callback!')
+// const secondCallback = () => console.log('Second callback!')
+// const thirdCallback = () => console.log('Third callback!')
+
+// multiBtn.addEventListener('click', firstCallback)
+// multiBtn.addEventListener('click', secondCallback)
+// multiBtn.addEventListener('click', thirdCallback)
+
+//*
+// const addListener = document.querySelector('.js-add')
+// const removeListener = document.querySelector('.js-remove')
+// const target = document.querySelector('.target-btn')
+
+// const toClick = () => console.log('click event listener callback')
+
+// const clickHandler = () => {
+//   target.addEventListener('click', toClick)
+//   console.log('click event listener was added to btn')
+// }
+
+// addListener.addEventListener('click', clickHandler)
+
+// removeListener.addEventListener('click', () => {
+//   target.removeEventListener('click', toClick)
+//   console.log('click event listener was removed from btn')
+// })
+
+//*
+// const mango = {
+//   username: 'Mango',
+//     showUserName() {
+//       console.log(this)
+//       console.log(`My username is ${this.username}.`)
+//     }
+// }
+// const button = document.querySelector('.target-btn')
+// mango.showUserName()
+// button.addEventListener('click', mango.showUserName.bind(mango))
+
+//*
+// const btn = document.querySelector('.btn')
+// const handleClick = (event) => {
+//   console.log('event:', event)
+//   console.log('event type:', event.type)
+//   console.log('currentTarget:', event.currentTarget)
+// }
+// btn.addEventListener('click', handleClick)
+
+//*
+// const form = document.querySelector('.register-form')
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault()
+//   const {
+//     elements: {username, password}
+//   } = event.currentTarget
+//   console.log(username.value, password.value)
+// })
+
+//*
+// document.addEventListener('keydown', (event) => {
+//   console.log('Keydown:', event)
+// })
+// document.addEventListener('keyup', event => {
+//   console.log('Keyup:', event)
+// })
+
+//*
+/*<button type="button" class="js-clear">Clear output</button>
+<div class="log-list"></div>*/
+
+const clearBtn = document.querySelector('.js-clear')
+const logList = document.querySelector('.log-list')
+let keyPressCounter = 1
+console.log(clearBtn)
+
+document.addEventListener('keydown', logMessage)
+document.addEventListener("keyup", logMessage);
+
+clearBtn.addEventListener('click', reset)
+
+function logMessage({ type, key, code }) {
+  const markup = `<div class="log-item" >
+  <span class="chip">${keyPressCounter}</span>
+  <ul>
+  <li>Event: ${type}</li>
+  <li>Key: ${key}</li>
+  <li>Code: ${code}</li></ul>
+  </div>`
+  logList.insertAdjacentHTML("afterbegin", markup)
+  if (type === 'keyup') {
+increamentKeyPressCounter()
+  }
+}
+
+function increamentKeyPressCounter() {
+      keyPressCounter+=1
+}
+
+function reset() {
+  keyPressCounter = 1
+  logList.innerHTML=''
+}
+/*
+document.addEventListener("keydown", logMessage);
+document.addEventListener("keyup", logMessage);
+clearLogBtn.addEventListener("click", reset);
+
+function logMessage({ type, key, code }) {
+  const markup = `<div class="log-item">
+    <span class="chip">${keypressCounter}</span>
+    <ul>
+      <li><b>Event</b>: ${type}</li>
+      <li><b>Key</b>: ${key}</li>
+      <li><b>Code</b>: ${code}</li>
+    </ul>
+  </div>`;
+
+  logList.insertAdjacentHTML("afterbegin", markup);
+
+  if (type === "keyup") {
+    incrementKeypressCounter();
+  }
+}
+
+function reset() {
+  keypressCounter = 1;
+  logList.innerHTML = "";
+}
+
+function incrementKeypressCounter() {
+  keypressCounter += 1;
+}*/
